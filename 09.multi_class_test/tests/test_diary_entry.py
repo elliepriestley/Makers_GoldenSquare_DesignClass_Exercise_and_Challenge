@@ -76,3 +76,13 @@ def test_read_entry_in_two_chunks():
     diary_entry1 = DiaryEntry("My Title", "This is a diary entry that is longer to test the wpm count for this method")
     assert diary_entry1.reading_chunk(4, 2) == "This is a diary entry that is longer"
     assert diary_entry1.reading_chunk(4, 2) == "to test the wpm count for this method"
+
+"""
+Test that after second chunk providing contents is fully read, goes back to beginning
+"""
+
+def test_read_from_beginning():
+    diary_entry1 = DiaryEntry("My Title", "This is a diary entry that is longer to test the wpm count for this method")
+    diary_entry1.reading_chunk(4, 2)
+    diary_entry1.reading_chunk(4, 2)
+    assert diary_entry1.reading_chunk(4, 2) == "This is a diary entry that is longer"

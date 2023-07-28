@@ -49,6 +49,8 @@ class DiaryEntry:
         # The next call after that it should restart from the beginning.
         no_words_can_read = wpm * minutes
         words = self.contents.split()
+        if self.count_words() <= self.words_read:
+            self.words_read = 0
         chunk = " ".join(words[self.words_read:self.words_read + no_words_can_read])
         self.words_read += no_words_can_read
         return chunk
