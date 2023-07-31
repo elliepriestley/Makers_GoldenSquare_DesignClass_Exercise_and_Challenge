@@ -86,3 +86,4 @@ def test_read_from_beginning():
     diary_entry1.reading_chunk(4, 2)
     diary_entry1.reading_chunk(4, 2)
     assert diary_entry1.reading_chunk(4, 2) == "This is a diary entry that is longer"
+
