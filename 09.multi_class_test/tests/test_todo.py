@@ -1,5 +1,4 @@
 from lib.todo import Todo
-import pytest
 
 """
 Test that we can create an instance of the ToDo class and then access the task variable
